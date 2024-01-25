@@ -101,9 +101,11 @@ headings.forEach(heading => {
     opacity: 0,
     scrollTrigger: {
       trigger: heading,
-      start: "top 80%",
-      end: "top 60%",
+      start: "clamp(top 85%)",
+      end: "clamp(bottom 100%)",
+      
       toggleActions: "play none reverse none",
+      markers: true,
     }
   })
 });
@@ -116,7 +118,6 @@ gsap.from(".icon", {
     trigger: ".skill-icons",
     start: "clamp(top bottom)",
     end: "clamp(bottom top)",
-    toggleActions: "restart none none none",
   }
 })
 
@@ -131,7 +132,6 @@ fadeInUp.forEach(section => {
       trigger: section,
       start: "clamp(-250 80%)",
       end: "clamp(bottom bottom)",
-      toggleActions: "play none reverse none",
     }
   })
 });
