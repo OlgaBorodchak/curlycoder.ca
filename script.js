@@ -92,7 +92,9 @@ gsap.from(chars, {
   opacity: 0,
 });
 
-gsap.registerPlugin(ScrollTrigger) 
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.config({ ignoreMobileResize: true });
 
 const headings = gsap.utils.toArray('.fadeInLeft');
 headings.forEach(heading => {
@@ -103,9 +105,7 @@ headings.forEach(heading => {
       trigger: heading,
       start: "clamp(top 85%)",
       end: "clamp(bottom 100%)",
-      
       toggleActions: "play none reverse none",
-      markers: true,
     }
   })
 });
@@ -136,7 +136,6 @@ fadeInUp.forEach(section => {
   })
 });
 
-
 const tl = gsap.timeline();
   tl.from(".developer-text", { y: 200, opacity: 0, ease: "bounce.out", duration: 2,  })
     .from(".logo", { y: -100, opacity: 0, duration: 1 }, "-=1")
@@ -148,9 +147,7 @@ const tl = gsap.timeline();
     { y: 7, opacity: 1, duration: 0.5, repeat: -1, yoyo: true});
     
 
-
 //Hover overlay on mobile touch
-
 const projects = document.querySelectorAll('.project');
 
 projects.forEach((project) => {
@@ -167,12 +164,3 @@ projects.forEach((project) => {
     project.classList.remove('mobileoverlay');
   })
 }) 
-
-
-
-
-
-
-
-
-
